@@ -12,7 +12,10 @@ const ComicItem = (comic) => {
     return(
         <div className="card animate__animated animate__fadeIn">
             <img src={fullUrl} alt={comic.title} />
-            <p>{comic.title}</p>
+            <div className="titleBox">
+                <p className="title">{comic.title}</p>
+            </div>
+            <p className="price">{comic.id} USD</p>
         </div>
     )
 

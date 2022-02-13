@@ -8,6 +8,8 @@ const getApi = async() => {
     const resp = await fetch(url);
     const { data } = await resp.json();
 
+    console.log(data);
+
     const comics = data.results.map( comic => {
         return {
             id: comic.id,
