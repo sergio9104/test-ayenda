@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import './FilterComic.scss';
+
 const FilterComic = ({ setComics, comics }) => {
 
     // console.log(setComics, comics);
@@ -26,7 +28,7 @@ const FilterComic = ({ setComics, comics }) => {
         <>
             <form onSubmit={handledSubmit}>
                 <label htmlFor="search">Buscar comic</label>
-                <input type="text" value={inputValue} onChange={handleInputChange}/>
+                <input type="text" value={inputValue} onChange={handleInputChange} placeholder="Escribe el nombre del comic"/>
             </form>
         </>
     )

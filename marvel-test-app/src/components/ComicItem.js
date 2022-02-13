@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './ComicItem.scss';
+
 const ComicItem = (comic) => {
 
     const urlImg = comic.thumbnail.path;
@@ -8,7 +10,7 @@ const ComicItem = (comic) => {
     const fullUrl = `${urlImg}/${variant}.${extension}`;
 
     return(
-        <div className="card">
+        <div className="card animate__animated animate__fadeIn">
             <img src={fullUrl} alt={comic.title} />
             <p>{comic.title}</p>
         </div>

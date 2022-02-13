@@ -1,0 +1,31 @@
+header{
+    position: relative;
+    height: 350px;
+    width: 100%;
+    background-color: red;
+    background-image: url(../../public/erik-mclean-8SeJUmfahu0-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    @media (max-width: 768px) {
+        height: 200px;
+        width: 100%;
+    }
+    .filterImg{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgba($color: #000, $alpha: .5);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        h2{
+            margin: 0 50px;
+            font-size: 100px;
+            color: #fff;
+            @media (max-width: 425px) {
+                font-size: 50px;
+            }
+        }
+    }
+}
