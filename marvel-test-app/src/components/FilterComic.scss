@@ -1,0 +1,25 @@
+form{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 425px) {
+        width: 90%;
+        margin: auto;
+    }
+    label{
+        font-weight: bold;
+        font-size: 25px;
+    }
+    input{
+        margin-top: 10px;
+        border: 0;
+        border-bottom: 2px solid #ccc;
+        height: 40px;
+        &:focus-visible{
+            border: 0;
+            outline: none;
+            border-bottom: 2px solid #000;
+        }
+    }
+}

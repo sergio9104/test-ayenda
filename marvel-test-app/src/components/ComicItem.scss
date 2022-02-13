@@ -1,0 +1,25 @@
+.card{
+    border: 1px solid #ccc;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    img{
+        width: 100%;
+    }
+    .titleBox{
+        height: 85px;
+        .title{
+            margin-left: 5px;
+            margin-right: 5px;
+            font-weight: bold;
+        }
+    }
+    .price{
+        text-align: center;
+        margin-top: 0;
+        margin-left: 5px;
+        width: 80px;
+        font-size: 14px;
+        background-color: #ec1d24;
+        color: #fff;
+        padding: 8px;
+    }
+}

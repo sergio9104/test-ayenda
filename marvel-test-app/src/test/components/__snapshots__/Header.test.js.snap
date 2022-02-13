@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en el comic item component Debe mostrar correctamente el componente 1`] = `
+<header>
+  <div
+    className="filterImg"
+  >
+    <h2>
+      Marvel app
+    </h2>
+  </div>
+</header>
+`;
