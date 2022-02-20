@@ -1,94 +1,29 @@
-import {Component} from "react";
+import Head from 'next/head';
+import Navigation from "../components/navigation";
 
-const comicsData = [
-  {
-    title: "Uncanny X-Men (1963) #452",
-    description: "CHASING HELLFIRE\" PART 1 (OF 3)\r\nWhile on assignment to track down missing teammate Sage, the X-Men discover more than they bargained for-the birth of a newer and deadlier Hellfire Club.",
-    images: [
-      {
-        "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/20/591db92ea22b5",
-        "extension": "jpg"
-      }
-    ],
-    characters: {
-      items: [
-        {
-          name: "X-Men"
-        }
-      ]
-    }
-  },
-  {
-    title: "Mystique (2003) #21",
-    description: "\"QUIET\" PART 2 (OF 5)\r<br>Mystique is caught between two masters-one, mutant activist Charles Xavier; the other, the mysterious Quiet Man. Now, the time has come when she can no longer serve both!\r<br>",
-    images: [
-      {
-        "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/50/564b9ae8a2e31",
-        "extension": "jpg"
-      },
-      {
-        "path": "http://i.annihil.us/u/prod/marvel/i/mg/c/b0/4bc6b576ce7e3",
-        "extension": "jpg"
-      }
-    ],
-    characters: {
-      items: [
-        {
-          name: "Mystique"
-        }
-      ]
-    }
-  },
-  {
-    title: "Art of Marvel Vol. 2 (Hardcover)",
-    description: "This brand-new deluxe hardcover is a follow-up to the best-selling ART OF MARVEL VOL. I. Featuring more than 100 illustrations by the comic book industry's hottest artists and painters, this new volume features more breathtaking looks at your favorite Marvel heroes and villains, including Spider-Man, the X-Men, the Hulk, Daredevil, Elektra, the Punisher, the Avengers and many, many more! A perfect companion piece to ART OF MARVEL VOL. I, this deluxe coffee-table book showcases the rich artistry of the Marvel Universe like never before!",
-    images: [
-      {
-        "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/40/4bc6b56815504",
-        "extension": "jpg"
-      }
-    ],
-    characters: {
-      items: []
-    }
-  }
-]
-
-function getComics() {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(comicsData);
-    }, 1000)
-  })
+const Index = () => {
+  return (
+    <div>
+      <Head>
+        <title>Ayenda</title>
+        <meta charSet="utf-8"/>
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+        <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="google" content="notranslate"/>
+        <meta name="description" content="Amazing comics challenge"/>
+        <meta name="keywords" content="Next.js Marvel's API"/>
+        <meta name="author" content="https://github.com/amendocol"/>
+        <meta httpEquiv="Cache-Control" content="public, no-transform"/>
+        <meta httpEquiv="expires" content="1d"/>
+        <meta httpEquiv="cache_methods" content="GET"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossOrigin="anonymous"></link>
+      </Head>
+      <Navigation/>
+      <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossOrigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossOrigin="anonymous"></script>
+      <script src="https://use.fontawesome.com/8d154b2141.js"></script>
+    </div>
+  )
 }
-
-export default class Home extends Component {
-  state = {
-    comics: []
-  };
-
-  async componentDidMount() {
-    const responseComics = await getComics();
-    this.setState({ comics: responseComics });
-  }
-
-  render() {
-    const { comics } = this.state;
-    return (
-      <div>
-        <h1>Comics</h1>
-        <ul>
-          <li>
-            {comics.map((item) => (
-              <div>
-                <span>{item.title}</span>
-                <img style={{height: '100px', width: '100px'}} src={item.images[0].path + '/detail.' + item.images[0].extension} />
-              </div>
-            ))}
-          </li>
-        </ul>
-        <pre>{JSON.stringify(comics, null, 2)}</pre>
-      </div>
-    )
-  }
-}
+export default Index;
